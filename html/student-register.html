@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="../css/studentregi.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="student-register-form">
+            <h1 class="form-title">Student Registration Form</h1>
+
+            <!-- Moved Semester Field to the Top -->
+            <div class="form-group">
+                <label for="sem">Semester:</label>
+                <select id="sem" name="sem" required>
+                    <option value="" disabled selected>Select Semester</option>
+                    <option value="III">Semester III</option>
+                    <option value="IV">Semester IV</option>
+                    <option value="V">Semester V</option>
+                    <option value="VI">Semester VI</option>
+                    <option value="VII">Semester VII</option>
+                    <option value="VIII">Semester VIII</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <small class="error-message" id="username-error">Username already exists.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="collegeid">College ID:</label>
+                <input type="email" id="collegeid" name="collegeid" required>
+                <small class="error-message" id="collegeid-error">College ID already exists.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneno">Phone Number:</label>
+                <input type="text" id="phoneno" name="phoneno" required>
+                <small class="error-message" id="phoneno-error">Phone number must be exactly 10 digits and contain only numbers.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rollno">Roll Number:</label>
+                <input type="text" id="rollno" name="rollno" required>
+                <small class="error-message" id="rollno-error">Roll number already exists.</small>
+            </div>
+
+            <div id="compulsory-subjects-container">
+                <h3>Compulsory Subjects:</h3>
+            </div>
+
+            <div id="optional-subjects-container">
+                <h3>Optional Subjects:</h3>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password:</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" required>
+                <small class="error-message" id="password-error">Passwords must match.</small>
+            </div>
+
+            <button type="submit" id="register-btn" disabled>Register</button>
+        </form>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

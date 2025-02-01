@@ -1,0 +1,93 @@
+.main-container {
+    max-width: 1200px; 
+    margin: 50px auto; 
+    padding: 20px; 
+    background-color: #90e0ef !important; 
+    border-radius: 50px; 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 1);
+}
+
+body {
+    background-color: #caf0f8 !important;
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #00a6ff;
+    text-align: center; /* Center the text horizontally */
+    padding: 30px 0 !important;
+    box-shadow: 10px 20px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-end-start-radius: 40px;
+    border-end-end-radius: 40px;
+    font-size: 3rem !important; /* Increase the font size */
+    font-weight: 900 !important; /* Make the font bold and thicker */
+}
+
+
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 3px #4a94e2, 0 0 5px #51babc !important;
+    }
+    to {
+        text-shadow: 0 0 5px #f9fcff, 0 0 10px #a2cfff !important;
+    }
+}
+
+.content-container1 {
+    margin-top: 90px !important; /* Add space from the top */
+}
+
+#students-table {
+    width: 100%;
+    margin-top: 30px; /* Optional: Add some margin between the form and the table */
+}
+
+#save-attendance-btn {
+    margin-top: 20px; /* Optional: Add space above the button */
+}
+
+
+.fixed-column {
+    position: sticky;
+    left: 0;
+    background: white;
+    z-index: 10;
+    border-right: 1px solid #dee2e6;
+}
+
+.fixed-percentage {
+    position: sticky;
+    right: 0;
+    background: white;
+    z-index: 10;
+    border-left: 1px solid #dee2e6;
+}
+
+thead th {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    z-index: 5;
+}
+
+tbody td {
+    background-color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scrollable-dates th,
+.scrollable-dates td {
+    min-width: 100px;
+    text-align: center;
+}

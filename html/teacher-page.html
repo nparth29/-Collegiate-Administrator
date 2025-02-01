@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/teacher-dashboard.css"> <!-- Link to the custom CSS for dashboard styling -->
+
+    <!-- Bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <div class="container">
+        <!-- Header Section with Logout Button -->
+        <div class="header">
+            <h1 class="center-title">Welcome to the Teacher Dashboard</h1>
+            <button id="logout-button" class="logout-button">LOGOUT</button>
+        </div>
+        <!-- Instructions -->
+        <br />
+        <br />
+</head>
+<body>
+    <h3 class="instructions">Select a subject to perform actions:</h3>
+        <!-- Container for Subject Buttons -->
+        <div id="subject-container" class="subject-container">
+            <!-- Subject buttons will be dynamically added here -->
+        </div>
+
+        <!-- Button to upgrade semester -->
+        <div class="text-center mt-3">
+            <button id="upgrade-btn" class="btn btn-warning" style="display: none;" onclick="openUpgradeModal()">Upgrade Semester</button>
+        </div>
+
+        <!-- Modal for upgrading semester and choosing year -->
+        <div class="modal fade" id="upgradeModal" tabindex="-1" aria-labelledby="upgradeModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="upgradeModalLabel">Upgrade Semester</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Select the semester and academic year to upgrade. This action will delete the student data of the selected semester.</p>
+                        <div class="mb-3">
+                            <label for="semesterSelect" class="form-label">Select Semester:</label>
+                            <select class="form-select" id="semesterSelect">
+                                <!-- Options will be dynamically populated -->
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="yearInput" class="form-label">Enter Academic Year:</label>
+                            <input type="text" class="form-control" id="yearInput" placeholder="Enter year (e.g., 2024-25)">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="upgradeSemester()">Confirm Upgrade</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for showing subject options (optional) -->
+        <div id="options-modal" style="display:none;">
+            <div id="modal-content">
+                <!-- Content populated by JavaScript -->
+            </div>
+        </div> <!-- Removed Close Button -->
+    </div>
+
+    <script>
+        // Add logout functionality to the logout button
+        document.getElementById('logout-button').addEventListener('click', function() {
+            // Clear the session storage
+            sessionStorage.clear();
+
+            // Redirect to index.html
+            window.location.href = '../html/index.html';
+        });
+
+        // Dynamically enable or disable the Upgrade Semester button based on compulsory subjects
+        function checkForCompulsorySubjects(subjects) {
+            const compulsorySemesters = [];
+
+            Object.keys(subjects).forEach(sem => {
+                const subject = subjects[sem];
+                if (subject.category === 'Compulsory') {
+                    compulsorySemesters.push(sem);
+                }
+            });
+
+            if (compulsorySemesters.length > 0) {
+                document.getElementById('upgrade-btn').style.display = 'block';
+                populateSemesterSelect(compulsorySemesters);
+            }
+        }
+
+        // Populate the semester dropdown based on available compulsory subjects
+        function populateSemesterSelect(semesters) {
+            const semesterSelect = document.getElementById('semesterSelect');
+            semesterSelect.innerHTML = ''; // Clear previous options
+
+            semesters.forEach(sem => {
+                const option = document.createElement('option');
+                option.value = sem;
+                option.innerText = `Semester ${sem}`;
+                semesterSelect.appendChild(option);
+            });
+        }
+
+        // Function to open the modal for upgrading semester
+        function openUpgradeModal() {
+            const upgradeModal = new bootstrap.Modal(document.getElementById('upgradeModal'));
+            upgradeModal.show();
+        }
+
+        // Function to upgrade semester (handled by the teacher)
+        async function upgradeSemester() {
+            const selectedSemester = document.getElementById('semesterSelect').value;
+            const yearInput = document.getElementById('yearInput').value;
+
+            if (!yearInput || !/^\d{4}-\d{2}$/.test(yearInput)) {
+                alert('Please enter a valid academic year (e.g., 2024-25).');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/upgrade-teacher-semester', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        semester: selectedSemester,
+                        year: yearInput
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    alert(`Semester upgraded successfully for ${selectedSemester}!`);
+                } else {
+                    alert(`Failed to upgrade semester: ${data.message}`);
+                }
+            } catch (error) {
+                console.error('Error upgrading semester:', error);
+                alert('An error occurred during the upgrade process.');
+            }
+        }
+    </script>
+
+    <script src="../js/teacher-dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

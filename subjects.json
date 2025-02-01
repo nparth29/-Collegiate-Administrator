@@ -1,0 +1,87 @@
+{
+    "III": {
+        "compulsory": [
+            {"id": "ITC301", "name": "Engineering Mathematics-III"},
+            {"id": "ITC302", "name": "Data Structure and Analysis"},
+            {"id": "ITC303", "name": "Database Management System"},
+            {"id": "ITC304", "name": "Principle of Communication"},
+            {"id": "ITC305", "name": "Paradigms and Computer Programming Fundamentals"}
+ 
+        ],
+        "optional": []
+    },
+    "IV": {
+        "compulsory": [
+            {"id": "ITC401", "name": "Engineering Mathematics-IV"},
+            {"id": "ITC402", "name": "Computer Network and Network Design"},
+            {"id": "ITC403", "name": "Operating System"},
+            {"id": "ITC404", "name": "Automata Theory"},
+            {"id": "ITC405", "name": "Computer Organization and Architecture"}
+        ],
+        "optional": []
+    },
+    "V": {
+        "compulsory": [
+            {"id": "ITC501", "name": "Internet Programming"},
+            {"id": "ITC502", "name": "Computer Network Security"},
+            {"id": "ITC503", "name": "Entrepreneurship and E-business"},
+            {"id": "ITC504", "name": "Software Engineering"}
+        ],
+        "optional": [
+            {"id": "ITDO5012", "name": "Advanced Data Management Technologies"},
+            {"id": "ITDO5014", "name": "Advanced Data Structure and Analysis"}
+        ]
+    },
+    "VI": {
+        "compulsory": [
+            {"id": "ITC601", "name": "Data Mining & Business Intelligence"},
+            {"id": "ITC602", "name": "Web X.0"},
+            {"id": "ITC603", "name": "Wireless Technology"},
+            {"id": "ITC604", "name": "AI and DS – 1"}
+        ],
+        "optional": [
+            {"id": "ITDO6011", "name": "Software Architecture"},
+            {"id": "ITDO6012", "name": "Image Processing"},
+            {"id": "ITDO6013", "name": "Green IT"},
+            {"id": "ITDO6014", "name": "Ethical Hacking and Forensics"}
+        ]
+    },
+    "VII": {
+        "compulsory": [
+            {"id": "ITC701", "name": "AI and DS – II"},
+            {"id": "ITC702", "name": "Internet of Everything"}
+        ],
+        "optional": {
+            "department": [
+                {"id": "ITDO7011", "name": "Storage Area Network"},
+                {"id": "ITDO7012", "name": "High-Performance Computing"},
+                {"id": "ITDO7013", "name": "Infrastructure Security"},
+                {"id": "ITDO7014", "name": "Software Testing and QA"}
+            ],
+            "institute": [
+                {"id": "ILO7011", "name": "Product Lifecycle Management"},
+                {"id": "ILO7012", "name": "Reliability Engineering"},
+                {"id": "ILO7013", "name": "Management Information System"}
+            ]
+        }
+    },
+    "VIII": {
+        "compulsory": [
+            {"id": "ITC801", "name": "Big Data Analytics"},
+            {"id": "ITC802", "name": "Internet of Everything"}
+        ],
+        "optional": {
+            "department": [
+                {"id": "ITDLO8041", "name": "User Interaction Design"},
+                {"id": "ITDLO8042", "name": "Information Retrieval Systems"},
+                {"id": "ITDLO8043", "name": "Knowledge Management"},
+                {"id": "ITDLO8044", "name": "Robotics"}
+            ],
+            "institute": [
+                {"id": "ILO8021", "name": "Project Management"},
+                {"id": "ILO8022", "name": "Finance Management"},
+                {"id": "ILO8023", "name": "Entrepreneurship Development and Management"}
+            ]
+        }
+    }
+}

@@ -1,0 +1,260 @@
+/* dashboard.css */
+body {
+    background-color: #008fe2;
+    background-image: url('../images/student-dash3.jpeg'); /* Replace with the path to your image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+}
+
+.student-dashboard-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff780;
+    padding: 5px;
+    box-shadow: 10px 20px 6px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    border-end-start-radius: 40px;
+    border-end-end-radius: 40px;
+    text-align: center; /* Ensure the text is centered */
+}
+
+.student-dashboard-header h1, .student-dashboard-header h3 {
+    font-weight:bolder; 
+}
+
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 80px;
+    background-color: #fff780;
+    border-radius: 10px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+}
+
+
+/* 
+blue buttons */
+
+.btn-primary {
+    background-color: #008fe2; 
+    color: white;
+    padding: 10px 10px 10px;
+    width: 40%;
+    border: 2px solid #008fe2; 
+    font-weight: bold; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 20px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #218838; 
+    color: white; 
+    border: 2px solid #218838; 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-secondary {
+    background-color: #008fe2; 
+    color: white;
+    padding: 10px 10px 10px;
+    width:40%;
+    border: 2px solid #008fe2; 
+    font-weight: bold; 
+    transition: all 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #218838; 
+    color: white; 
+    border: 2px solid #218838; 
+    transform: scale(1.05); 
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); 
+  }
+
+/* Center-align the header */
+.header {
+    display: flex;
+    flex-grow: 1;
+    text-align: centers;
+    justify-content: space-between; /* Aligns title on the left and button on the right */
+    align-items: center; /* Vertically centers the content */
+    padding: 10px;
+    height: 60px;
+}
+
+.center-title {
+    font-size: 50px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+/* Styling for the custom logout button */
+.custom-logout-btn {
+    position: absolute;
+    top: 30px; /* Align the button to the top of the container */
+    right: 20px; /* Align the button to the right with some padding */
+    background-color: #ff0019; /* Red background color */
+    color: white; /* White text color */
+    border: 3px solid #000000; /* Black border */
+    padding: 6px 12px; /* Padding around the text */
+    font-size: 14px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    width: auto; /* Auto width */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    font-weight: bold; /* Bold text */
+}
+
+/* Hover Effect for custom logout button */
+.custom-logout-btn:hover {
+    background-color: #ff0000; /* Slightly brighter red on hover */
+    color: white; /* Keep the text white */
+    border: 2px solid #000000; /* Thinner border on hover */
+    transform: scale(1.05); /* Slight scaling effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .custom-logout-btn {
+        font-size: 12px; /* Smaller font size for small screens */
+    }
+}
+
+
+/* Hover Effect */
+.logout-button:hover {
+    background-color: #ff0000; /* Same hover background color */
+    color: white;
+    border: 2px solid #000000; /* Update border on hover */
+    transform: scale(1.05); /* Same scaling effect */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+
+
+
+
+.logout-button:hover {
+    background-color: #ff0000;
+}
+
+/* Instructions Styling */
+.instructions {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+/* Subject Container */
+.subject-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Center the buttons */
+}
+
+/* Subject Button Styling */
+.subject-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 60%; /* Adjust width for better layout */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.subject-button:hover {
+    background-color: #218838;
+}
+
+/* Subject Container */
+.subject-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next row */
+    gap: 10px;
+    justify-content: center; /* Center the items */
+}
+
+/* Subject Item (Each Subject Block) */
+.subject-item {
+    width: 48%; /* Adjust the width to fit two columns */
+    margin-bottom: 20px; /* Space between the rows */
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Subject Button Styling */
+.subject-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%; /* Full width inside the item */
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.subject-button:hover {
+    background-color: #218838;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .subject-container {
+        flex-direction: column; /* Stack buttons on small screens */
+    }
+
+    .subject-button, .action-button {
+        width: 80%; /* Adjust width for smaller screens */
+        font-size: 14px;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    .subject-button {
+        width: 80%;
+        font-size: 14px;
+    }
+
+    .header {
+        flex-direction: column; /* Stack elements in header on small screens */
+    }
+
+    .logout-button {
+        font-size: 12px; /* Smaller font size for small screens */
+    }
+}

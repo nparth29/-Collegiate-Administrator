@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Attendance Records</title>
+    <link rel="stylesheet" href="../css/view-stud-attendance.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+    <div class="container mt-5 p-4 shadow-lg rounded bg-white">
+        <h1 class="text-center mb-4">Attendance Records for <span id="subject-name" style="color: #0073ff !important;">Advance Data Management Technologies</span></h1>
+
+        <!-- Date Picker Section (No Roll No Search) -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center">
+                <label for="specificDate" class="mr-2">Select Date:</label>
+                <input type="date" id="specificDate" class="form-control">
+            </div>
+            <button id="refreshButton" class="btn btn-info ml-3">Refresh</button>
+        </div>
+
+        <!-- Table for Attendance Records -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center">
+                <thead id="attendanceTableHead" class="thead-dark">
+                    <tr>
+                       
+                    </tr>
+                </thead>
+                <tbody id="attendanceResultsContainer">
+                    <!-- Dynamic table rows will be added here, each row showing a student’s name, attendance per date -->
+                    <tr>
+                        <td colspan="5" class="text-center text-danger">No attendance records found for this subject and semester.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/view-student-attendance.js"></script>
+</body>
+
+</html>

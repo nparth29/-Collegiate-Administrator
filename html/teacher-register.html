@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Registration Form</title>
+    <link rel="stylesheet" href="../css/teacher-regi.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="teacher-register-form">
+            <h1 class="form-title">Teacher Registration</h1>
+
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="employeeid">Employee ID:</label>
+                <input type="text" id="employeeid" name="employeeid" required>
+                <small class="error-message" id="employeeid-error">Employee ID must end with @kccemsr.edu.in</small>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneno">Phone Number:</label>
+                <input type="text" id="phoneno" name="phoneno" required>
+                <small class="error-message" id="phoneno-error">Phone number must be exactly 10 digits and contain only numbers.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <!-- Semester III selection -->
+            <div id="sem-III-subjects" class="semester-group">
+                <h4>Semester III</h4>
+                <select id="sem-III-compulsory" name="sem-III-compulsory">
+                    <option value="" disabled selected>Select Compulsory Subject for Semester III</option>
+                </select>
+            </div>
+
+            <!-- Semester IV selection -->
+            <div id="sem-IV-subjects" class="semester-group">
+                <h4>Semester IV</h4>
+                <select id="sem-IV-compulsory" name="sem-IV-compulsory">
+                    <option value="" disabled selected>Select Compulsory Subject for Semester IV</option>
+                </select>
+            </div>
+
+            <!-- Semester V selection -->
+            <div id="sem-V-subjects" class="semester-group">
+                <h4>Semester V</h4>
+                <select id="sem-V-compulsory" name="sem-V-compulsory">
+                    <option value="" disabled selected>Select Compulsory Subject for Semester V</option>
+                </select>
+                <br />
+                <br />
+                <select id="sem-V-department" name="sem-V-department">
+                    <option value="" disabled selected>Select Department Subject for Semester V</option>
+                </select>
+            </div>
+
+            <!-- Semester VI selection -->
+            <div id="sem-VI-subjects" class="semester-group">
+                <h4>Semester VI</h4>
+                <select id="sem-VI-compulsory" name="sem-VI-compulsory">
+                    <option value="" disabled selected>Select Compulsory Subject for Semester VI</option>
+                </select>
+                <br />
+                <br />
+                <select id="sem-VI-department" name="sem-VI-department">
+                    <option value="" disabled selected>Select Department Subject for Semester VI</option>
+                </select>
+            </div>
+
+            <!-- Semester VII selection -->
+            <div id="sem-VII-subjects" class="semester-group">
+                <h4>Semester VII</h4>
+                <select id="sem-VII-compulsory" name="sem-VII-compulsory">
+                    <option value="" disabled selected>Select Compulsory Subject for Semester VII</option>
+                </select>
+                <br />
+                <br />
+                <select id="sem-VII-department" name="sem-VII-department">
+                    <option value="" disabled selected>Select Department Subject for Semester VII</option>
+                </select>
+                <br />
+                <br />
+                <select id="sem-VII-institute" name="sem-VII-institute">
+                    <option value="" disabled selected>Select Institute Subject for Semester VII</option>
+                </select>
+            </div>
+
+            <!-- Semester VIII selection -->
+            <div id="sem-VIII-subjects" class="semester-group">
+                <h4>Semester VIII</h4>
+                <select id="sem-VIII-compulsory" name="sem-VIII-compulsory">
+                    <option value="" disabled selected>Select Compulsory Subject for Semester VIII</option>
+                </select>
+                <br />
+                <br />
+                <select id="sem-VIII-department" name="sem-VIII-department">
+                    <option value="" disabled selected>Select Department Subject for Semester VIII</option>
+                </select>
+                <br />
+                <br />
+                <select id="sem-VIII-institute" name="sem-VIII-institute">
+                    <option value="" disabled selected>Select Institute Subject for Semester VIII</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmpassword">Confirm Password:</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" required>
+                <small class="error-message" id="password-error">Passwords must match.</small>
+            </div>
+
+            <button type="submit" id="register-btn" disabled>Register</button>
+        </form>
+    </div>
+
+    <script src="../js/teacher-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #90e0ef  !important;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 200px !important; /* Adjusted border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.main-container {
+    max-width: 1200px; 
+    margin: 50px auto; /
+    padding: 20px; 
+    background-color: #00a0fd; 
+    border-radius: 50px; 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 1);
+}
+
+h1 {
+    color: #000000;
+    font-weight: bolder !important;
+    text-shadow: 0 0 3px #007bff, 0 0 5px #007bff, 0 0 10px #007bff;
+    animation: glow 1s infinite alternate; /* Apply animation */
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 3px #4a94e2, 0 0 5px #51babc;
+    }
+    to {
+        text-shadow: 0 0 5px #f9fcff, 0 0 10px #a2cfff;
+    }
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+    border-color: #ddd;
+}
+
+.table th {
+    background-color: #343a40;
+    color: #fff;
+}
+
+.table td {
+    background-color: #f8f9fa;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.table .failed {
+    color: #ff0000;
+}
+
+.input-group-text {
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="text"], input[type="number"] {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    font-weight: 600;
+}
